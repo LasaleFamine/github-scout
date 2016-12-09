@@ -23,7 +23,7 @@ githubScout('lasalefamine', 'github-scout', 'ACCESS_TOKEN').then(json => {
 
 ### githubScout(username, repository, [ACCESS_TOKEN])
 
-The ACCESS_TOKEN is not required but you will have a limited rate to call the API if the ACCESS_TOKEN is not present.
+The `ACCESS_TOKEN` is not required but you will have a limited rate to call the API if the `ACCESS_TOKEN` is not present.
 
 ## License
 
