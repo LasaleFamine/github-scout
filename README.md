@@ -27,4 +27,4 @@ The ACCESS_TOKEN is not required but you will have a limited rate to call the AP
 
 ## License
 
-[MIT](https://github.com/LasaleFamine/phi-zsh-theme/blob/master/LICENSE.md) &copy; LasaleFamine
+[MIT](https://github.com/LasaleFamine/github-scout/blob/master/LICENSE.md) &copy; LasaleFamine

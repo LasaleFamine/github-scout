@@ -1,6 +1,6 @@
 {
   "name": "github-repo-scout",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Useful details from a GitHub repository.",
   "main": "src/index.js",
   "author": {
