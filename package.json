@@ -1,0 +1,37 @@
+{
+  "name": "github-repo-scout",
+  "version": "0.1.0",
+  "description": "Useful details from a GitHub repository.",
+  "main": "src/index.js",
+  "author": {
+    "name": "LasaleFamine",
+    "email": "info@godev.space"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "files": [
+    "src/index.js"
+  ],
+  "keywords": [
+    "npm",
+    "github",
+    "scout",
+    "github-info",
+    "github-api",
+    "github-scout",
+    "github-repo-scout"
+  ],
+  "scripts": {
+    "test": "xo src/ --spaces && ava"
+  },
+  "dependencies": {
+    "filter-object": "^2.1.0",
+    "got": "^6.6.3"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "xo": "^0.17.1"
+  }
+}
