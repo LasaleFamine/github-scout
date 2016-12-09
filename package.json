@@ -24,7 +24,7 @@
     "github-repo-scout"
   ],
   "scripts": {
-    "test": "xo src/ --spaces && ava"
+    "test": "xo --space && ava"
   },
   "dependencies": {
     "filter-object": "^2.1.0",

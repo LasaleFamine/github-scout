@@ -5,23 +5,31 @@ const filterObj = require('filter-object');
 
 const API_GITHUB_REPOS = 'https://api.github.com/repos/';
 
-module.exports = (user, repo) => {
-	const repoUrl = url.resolve(API_GITHUB_REPOS, `${user}/${repo}`);
+module.exports = (user, repo, accessToken) => {
+  const repoUrl = url.resolve(API_GITHUB_REPOS, `${user}/${repo}`);
   const commitsRepoUrl = repoUrl + '/commits';
+  const GITHUB_ACCESS_TOKEN = accessToken;
 
-	const p1 = got(repoUrl, {
-		json: true
-	})
-
-  const p2 = got(commitsRepoUrl, {
+  const opt = {
     json: true
-  })
+  };
+
+  if (GITHUB_ACCESS_TOKEN) {
+    opt.options = {
+      headers: {
+        Authorization: `token ${GITHUB_ACCESS_TOKEN}`
+      }
+    };
+  }
+
+  const p1 = got(repoUrl, opt);
+  const p2 = got(commitsRepoUrl, opt);
 
   return Promise.all([p1, p2])
     .then(res => {
       const reposDetails = res[0].body;
       const commitsDetails = res[1].body;
-      let newRepoObj = {}
+      let newRepoObj = {};
       newRepoObj.repository = filterObj(reposDetails, [
         'full_name',
         'description',
@@ -38,18 +46,19 @@ module.exports = (user, repo) => {
         'network_count',
         'has_wiki',
         'has_issues'
-      ])
+      ]);
+
       newRepoObj.repository.commit = {};
       newRepoObj.repository.commit.message = commitsDetails[0].commit.message;
       newRepoObj.repository.commit.url = commitsDetails[0].commit.url;
       newRepoObj.repository.commit.date = commitsDetails[0].commit.author.date;
       return newRepoObj;
     })
-	  .catch(err => {
-		  if (err.statusCode === 404) {
-		    throw new Error(`Repository ${user}/${repo} doesn\'t exist`);
-		}
+    .catch(err => {
+      if (err.statusCode === 404) {
+        throw new Error(`Repository ${user}/${repo} doesn't exist`);
+      }
 
-		throw err;
-	});
+      throw err;
+    });
 };

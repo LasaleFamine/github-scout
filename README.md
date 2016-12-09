@@ -14,12 +14,16 @@ $ yarn add github-scout
 ```js
 const githubScout = require('github-scout');
 
-githubScout('lasalefamine', 'github-scout').then(json => {
+githubScout('lasalefamine', 'github-scout', 'ACCESS_TOKEN').then(json => {
 	console.log(json);
 	//=> {repository: {{full_name: 'lasalefamine/github-scout', ...}}
 });
 ```
+## API
 
+### githubScout(username, repository, [ACCESS_TOKEN])
+
+The ACCESS_TOKEN is not required but you will have a limited rate to call the API if the ACCESS_TOKEN is not present.
 
 ## License
 
