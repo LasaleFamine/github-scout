@@ -1,4 +1,4 @@
-# github-scout [![Build Status](https://travis-ci.org/lasalefamine/github-scout.svg?branch=master)](https://travis-ci.org/lasalefamine/github-scout)
+# github-scout [![Build Status](https://travis-ci.org/LasaleFamine/github-scout.svg?branch=master)](https://travis-ci.org/LasaleFamine/github-scout)
 
 > Get useful informations from a GitHub repository.
 
