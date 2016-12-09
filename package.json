@@ -1,5 +1,5 @@
 {
-  "name": "github-repo-scout",
+  "name": "github-scout",
   "version": "1.0.0",
   "description": "Useful details from a GitHub repository.",
   "main": "src/index.js",
